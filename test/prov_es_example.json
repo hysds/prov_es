@@ -1,0 +1,209 @@
+{
+  "wasAssociatedWith": {
+    "hysds:c67a35aa-ccef-5d4a-bdb2-44012953e805": {
+      "prov:role": "softwareAgent", 
+      "prov:agent": "hysds:ariamh-worker-32.domain.com/12353", 
+      "prov:activity": "hysds:create_interferogram-INSAR20130625_673969_2940232"
+    }
+  }, 
+  "used": {
+    "hysds:3991d97e-ea86-5229-9f25-6179eeb8e348": {
+      "prov:role": "input", 
+      "prov:time": "2015-04-23T22:49:43.064135+00:00", 
+      "prov:entity": "hysds:INSAR2_RAW_HI_06_HH_RA_20140922062622_20140922062629", 
+      "prov:activity": "hysds:create_interferogram-INSAR20130625_673969_2940232"
+    }, 
+    "hysds:d844af3d-d691-583b-be01-bb97ce000b85": {
+      "prov:role": "input", 
+      "prov:time": "2015-04-23T22:49:43.064135+00:00", 
+      "prov:entity": "hysds:srtm/version2_1/SRTM1/Region_01/N31W114", 
+      "prov:activity": "hysds:create_interferogram-INSAR20130625_673969_2940232"
+    }
+  }, 
+  "agent": {
+    "hysds:ariamh-worker-32.domain.com/12353": {
+      "hysds:pid": "12353", 
+      "prov:type": {
+        "type": "prov:QualifiedName", 
+        "$": "prov:SoftwareAgent"
+      }, 
+      "hysds:host": "ariamh-worker-32.domain.com"
+    }, 
+    "eos:ASI": {
+      "prov:type": {
+        "type": "prov:QualifiedName", 
+        "$": "prov:Organization"
+      }
+    }
+  }, 
+  "entity": {
+    "hysds:interferogram__T22_F314-330_INSAR1_20130828-INSAR1_20130609": {
+      "gcis:sourceInstrument": [
+        "eos:INSAR2-SAR"
+      ], 
+      "eos:level": "L1", 
+      "prov:type": {
+        "type": "prov:QualifiedName", 
+        "$": "eos:dataset"
+      }, 
+      "prov:location": [
+        "https://dav.domain.com/repository/products/interferograms/v0.2/2014/09/06/interferogram__T111_F330-343_INSAR1_20140922-INSAR1_20140906/2014-09-22T224943.621648"
+      ], 
+      "info:doi": "10.5067/ARIAMH/INSAR/Interferogram"
+    }, 
+    "eos:ISCE": {
+      "gcis:implements": [
+        "eos:interferogram_creation"
+      ], 
+      "prov:type": {
+        "type": "prov:QualifiedName", 
+        "$": "eos:software"
+      }
+    }, 
+    "hysds:INSAR2_RAW_HI_06_HH_RA_20140922062622_20140922062629": {
+      "gcis:sourceInstrument": [
+        "eos:INSAR2-SAR"
+      ], 
+      "eos:level": "L0", 
+      "prov:type": {
+        "type": "prov:QualifiedName", 
+        "$": "eos:dataset"
+      }, 
+      "prov:location": [
+        "https://dav.domain.com/repository/products/insar/v0.2/2014/09/22/INSAR2_RAW_HI_06_HH_RA_20140922062622_20140922062629/INSAR20140922_913686_3720875"
+      ], 
+      "info:doi": "10.5067/ARIAMH/INSAR/Scene"
+    }, 
+    "eos:INSAR4-SAR": {
+      "gcis:hasSensor": [
+        "eos:SAR"
+      ], 
+      "gcis:inPlatform": "eos:INSAR4", 
+      "prov:type": {
+        "type": "prov:QualifiedName", 
+        "$": "eos:instrument"
+      }, 
+      "gcis:hasGoverningOrganization": [
+        "eos:ASI"
+      ]
+    }, 
+    "hysds:runtime_context": {
+      "eos:hasRuntimeParameter": [
+        "https://dav.domain.com/repository/products/insar/v0.2/2014/09/22/INSAR2_RAW_HI_06_HH_RA_20140922062622_20140922062629/INSAR20140922_913686_3720875"
+      ], 
+      "prov:type": {
+        "type": "prov:QualifiedName", 
+        "$": "eos:runtimeContext"
+      }
+    }, 
+    "eos:SAR": [
+      {
+        "gcis:inInstrument": "eos:INSAR2-SAR", 
+        "prov:type": {
+          "type": "prov:QualifiedName", 
+          "$": "eos:sensor"
+        }
+      }, 
+      {
+        "gcis:inInstrument": "eos:INSAR4-SAR", 
+        "prov:type": {
+          "type": "prov:QualifiedName", 
+          "$": "eos:sensor"
+        }
+      }
+    ], 
+    "eos:interferogram_creation": {
+      "eos:describedBy": [
+        "eos:interferogram_creation_atbd"
+      ], 
+      "gcis:implementedIn": [
+        "eos:ISCE"
+      ], 
+      "prov:type": {
+        "type": "prov:QualifiedName", 
+        "$": "eos:algorithm"
+      }
+    }, 
+    "eos:INSAR4": {
+      "prov:type": {
+        "type": "prov:QualifiedName", 
+        "$": "eos:platform"
+      }, 
+      "gcis:hasInstrument": [
+        "eos:INSAR4-SAR"
+      ]
+    }, 
+    "eos:interferogram_creation_atbd": {
+      "prov:type": {
+        "type": "prov:QualifiedName", 
+        "$": "bibo:Document"
+      }, 
+      "prov:location": [
+        "http://aria.domain.com/docs/ATBD.pdf"
+      ], 
+      "info:doi": "10.5067/SOME/FAKE/ATBD_DOI"
+    }, 
+    "hysds:srtm/version2_1/SRTM1/Region_01/N31W114": {
+      "eos:level": "L0", 
+      "prov:type": {
+        "type": "prov:QualifiedName", 
+        "$": "eos:dataset"
+      }, 
+      "prov:location": [
+        "https://dav.domain.com/repository/products/srtm/version2_1/SRTM1/Region_01/N31W114.hgt.zip"
+      ]
+    }, 
+    "eos:INSAR2": {
+      "prov:type": {
+        "type": "prov:QualifiedName", 
+        "$": "eos:platform"
+      }, 
+      "gcis:hasInstrument": [
+        "eos:INSAR2-SAR"
+      ]
+    }, 
+    "eos:INSAR2-SAR": {
+      "gcis:hasSensor": [
+        "eos:SAR"
+      ], 
+      "gcis:inPlatform": "eos:INSAR2", 
+      "prov:type": {
+        "type": "prov:QualifiedName", 
+        "$": "eos:instrument"
+      }, 
+      "gcis:hasGoverningOrganization": [
+        "eos:ASI"
+      ]
+    }
+  }, 
+  "prefix": {
+    "info": "http://info-uri.info/", 
+    "bibo": "http://purl.org/ontology/bibo/", 
+    "hysds": "http://hysds.domain.com/hysds/0.1#", 
+    "eos": "http://nasa.gov/eos.owl#", 
+    "gcis": "http://data.globalchange.gov/gcis.owl#", 
+    "dcterms": "http://purl.org/dc/terms/"
+  }, 
+  "activity": {
+    "hysds:create_interferogram-INSAR20130625_673969_2940232": {
+      "eos:runtimeContext": "hysds:runtime_context", 
+      "eos:usesSoftware": [
+        "eos:ISCE"
+      ], 
+      "prov:startTime": "2015-04-23T22:49:43.064135+00:00", 
+      "prov:endTime": "2015-04-24T02:13:36.064135+00:00", 
+      "prov:type": {
+        "type": "prov:QualifiedName", 
+        "$": "eos:processStep"
+      }
+    }
+  }, 
+  "wasGeneratedBy": {
+    "hysds:fd9bd510-c3df-52ce-b02e-cd2ff95cc5f6": {
+      "prov:role": "output", 
+      "prov:time": "2015-04-24T02:13:36.064135+00:00", 
+      "prov:entity": "hysds:interferogram__T22_F314-330_INSAR1_20130828-INSAR1_20130609", 
+      "prov:activity": "hysds:create_interferogram-INSAR20130625_673969_2940232"
+    }
+  }
+}
