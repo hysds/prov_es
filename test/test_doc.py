@@ -82,7 +82,7 @@ def test_ProvEsDocument():
                          sa_id, rt_ctx_id, [id, dem_id], [out_id],
                          wasAssociatedWithRole="softwareAgent")
     
-    print doc.serialize(indent=2)
+    print(doc.serialize(indent=2))
 
 
 if __name__ == "__main__":

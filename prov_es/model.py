@@ -1,4 +1,4 @@
-from __future__ import absolute_import
+
 import os, re, types, json, uuid
 
 from prov.model import (ProvDocument, Namespace, Literal, Identifier,
@@ -27,9 +27,9 @@ class ProvEsDocument(ProvDocument):
         if 'namespaces' not in kwargs:
             kwargs['namespaces'] = self.NAMESPACES
         else:
-            if isinstance(kwargs['namespaces'], types.DictType):
+            if isinstance(kwargs['namespaces'], dict):
                 kwargs['namespaces'] = [ Namespace(prefix, uri) for prefix, uri in
-                                         kwargs['namespaces'].items() ]
+                                         list(kwargs['namespaces'].items()) ]
             kwargs['namespaces'].extend(self.NAMESPACES)
 
         # track organizations to remove redundancy
