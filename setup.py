@@ -11,5 +11,5 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     zip_safe=False,
-    install_requires=['prov==1.3.1']
+    install_requires=['prov==1.3.1', 'future>=0.17.1']
 )
