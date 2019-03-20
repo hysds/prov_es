@@ -6,7 +6,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='prov_es',
-    version='0.1.1',
+    version='0.2.0',
     long_description='PROV-ES python library',
     packages=find_packages(),
     include_package_data=True,
