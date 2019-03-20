@@ -12,6 +12,12 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
+from __future__ import unicode_literals
+from __future__ import print_function
+from __future__ import division
+from __future__ import absolute_import
+from future import standard_library
+standard_library.install_aliases()
 import sys
 import os
 import shlex
@@ -52,9 +58,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'prov_es'
-copyright = u'PROV-ES'
-author = [u'Hook Hua', u'Gerald Manipon']
+project = 'prov_es'
+copyright = 'PROV-ES'
+author = ['Hook Hua', 'Gerald Manipon']
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -212,25 +218,25 @@ htmlhelp_basename = 'prov_esdoc'
 # -- Options for LaTeX output ---------------------------------------------
 
 latex_elements = {
-# The paper size ('letterpaper' or 'a4paper').
-#'papersize': 'letterpaper',
+    # The paper size ('letterpaper' or 'a4paper').
+    # 'papersize': 'letterpaper',
 
-# The font size ('10pt', '11pt' or '12pt').
-#'pointsize': '10pt',
+    # The font size ('10pt', '11pt' or '12pt').
+    # 'pointsize': '10pt',
 
-# Additional stuff for the LaTeX preamble.
-#'preamble': '',
+    # Additional stuff for the LaTeX preamble.
+    # 'preamble': '',
 
-# Latex figure (float) alignment
-#'figure_align': 'htbp',
+    # Latex figure (float) alignment
+    # 'figure_align': 'htbp',
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  (master_doc, 'prov_es.tex', u'prov\\_es Documentation',
-   u'Gerald Manipon', 'manual'),
+    (master_doc, 'prov_es.tex', 'prov\\_es Documentation',
+     'Gerald Manipon', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -259,7 +265,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'prov_es', u'prov_es Documentation',
+    (master_doc, 'prov_es', 'prov_es Documentation',
      [author], 1)
 ]
 
@@ -273,9 +279,9 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  (master_doc, 'prov_es', u'prov_es Documentation',
-   author, 'prov_es', 'One line description of project.',
-   'Miscellaneous'),
+    (master_doc, 'prov_es', 'prov_es Documentation',
+     author, 'prov_es', 'One line description of project.',
+     'Miscellaneous'),
 ]
 
 # Documents to append as an appendix to all manuals.

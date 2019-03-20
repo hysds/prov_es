@@ -1,4 +1,10 @@
 #!/usr/bin/env python
+from __future__ import print_function
+from __future__ import unicode_literals
+from __future__ import division
+from __future__ import absolute_import
+from future import standard_library
+standard_library.install_aliases()
 from datetime import datetime, timedelta
 from prov_es.model import ProvEsDocument
 
@@ -61,7 +67,8 @@ def test_ProvEsDocument():
     out_accessURL = 'https://aria-search.domain.com/?source={"query":{"bool":{"must":[{"term":{"dataset":"interferogram"}},{"query_string":{"query":"\"interferogram__T111_F330-343_INSAR1_20140922-INSAR1_20140906\"","default_operator":"OR"}}]}},"sort":[{"_timestamp":{"order":"desc"}}],"fields":["_timestamp","_source"]}'
     out_downloadURL = 'https://dav.domain.com/repository/products/interferograms/v0.2/2014/09/06/interferogram__T111_F330-343_INSAR1_20140922-INSAR1_20140906/2014-09-22T224943.621648'
     out_level = "L1"
-    doc.dataset(out_id, out_doi, [out_downloadURL], [instrument], None, out_level)
+    doc.dataset(out_id, out_doi, [out_downloadURL], [
+                instrument], None, out_level)
 
     # software agent
     sa_id = "hysds:ariamh-worker-32.domain.com/12353"
@@ -81,8 +88,8 @@ def test_ProvEsDocument():
                          end_time.isoformat() + 'Z', [software],
                          sa_id, rt_ctx_id, [id, dem_id], [out_id],
                          wasAssociatedWithRole="softwareAgent")
-    
-    print doc.serialize(indent=2)
+
+    print(doc.serialize(indent=2))
 
 
 if __name__ == "__main__":
