@@ -14,6 +14,23 @@ jobs:
             source $HOME/verdi/bin/activate
             cp $HOME/verdi/ops/hysds/configs/celery/celeryconfig.py.tmpl $HOME/verdi/ops/hysds/celeryconfig.py
             python setup.py test
+  build:
+    docker:
+      - image: circleci/python:3.9
+        auth:
+          username: $DOCKER_USER
+          password: $DOCKER_PASS
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: |
+            pip install pytest==7.2.0
+            pip install .
+      - run:
+          name: pytest
+          command: |
+            pytest .
   publish-pypi:
     docker:
       - image: circleci/python:3.9
