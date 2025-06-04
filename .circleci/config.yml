@@ -16,7 +16,7 @@ jobs:
             python setup.py test
   build:
     docker:
-      - image: cimg/python:3.9
+      - image: cimg/python:3.12
         auth:
           username: $DOCKER_USER
           password: $DOCKER_PASS
@@ -25,15 +25,16 @@ jobs:
       - run:
           name: Install dependencies
           command: |
-            pip install pytest==7.2.0
-            pip install .
+            python -m pip install --upgrade pip
+            pip install pytest
+            pip install -e .
       - run:
-          name: pytest
+          name: Run tests
           command: |
-            pytest .
+            python -m pytest -v
   publish-pypi:
     docker:
-      - image: cimg/python:3.9
+      - image: cimg/python:3.12
         auth:
           username: $DOCKER_USER
           password: $DOCKER_PASS

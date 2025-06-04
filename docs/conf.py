@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # prov_es documentation build configuration file, created by
 # sphinx-quickstart on Tue Jul 14 16:50:51 2015.
@@ -12,12 +11,6 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
-from __future__ import unicode_literals
-from __future__ import print_function
-from __future__ import division
-from __future__ import absolute_import
-from future import standard_library
-standard_library.install_aliases()
 import sys
 import os
 import shlex
