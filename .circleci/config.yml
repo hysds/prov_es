@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   test:
     docker:
-      - image: hysds/pge-base:latest
+      - image: hysds/pge-base:HC-563
         auth:
           username: $DOCKER_USER
           password: $DOCKER_PASS
@@ -13,7 +13,8 @@ jobs:
           command: |
             source $HOME/verdi/bin/activate
             cp $HOME/verdi/ops/hysds/configs/celery/celeryconfig.py.tmpl $HOME/verdi/ops/hysds/celeryconfig.py
-            python setup.py test
+            pip install -e .
+            pytest .
   build:
     docker:
       - image: cimg/python:3.12
