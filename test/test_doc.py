@@ -1,11 +1,5 @@
 #!/usr/bin/env python
-from __future__ import print_function
-from __future__ import unicode_literals
-from __future__ import division
-from __future__ import absolute_import
-from future import standard_library
-standard_library.install_aliases()
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from prov_es.model import ProvEsDocument
 
 
@@ -82,10 +76,10 @@ def test_ProvEsDocument():
 
     # process step
     proc_id = "hysds:create_interferogram-INSAR20130625_673969_2940232"
-    start_time = datetime.utcnow()
+    start_time = datetime.now(timezone.utc)
     end_time = start_time + timedelta(seconds=12233)
-    ps = doc.processStep(proc_id, start_time.isoformat() + 'Z',
-                         end_time.isoformat() + 'Z', [software],
+    ps = doc.processStep(proc_id, start_time.isoformat(timespec='seconds').replace('+00:00', 'Z'),
+                         end_time.isoformat(timespec='seconds').replace('+00:00', 'Z'), [software],
                          sa_id, rt_ctx_id, [id, dem_id], [out_id],
                          wasAssociatedWithRole="softwareAgent")
 

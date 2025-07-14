@@ -1,12 +1,3 @@
-from __future__ import unicode_literals
-from __future__ import print_function
-from __future__ import division
-from __future__ import absolute_import
-
-from builtins import super
-from builtins import str
-from future import standard_library
-standard_library.install_aliases()
 import os
 import re
 import types
@@ -46,7 +37,7 @@ class ProvEsDocument(ProvDocument):
         # track organizations to remove redundancy
         self.prov_es_orgs = {}
 
-        super(ProvEsDocument, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
 
     def collection(self, id, doi=None, shortName=None, longName=None,
                    location=[], sourceInstrument=[], level=None,
@@ -287,7 +278,7 @@ class ProvEsDocument(ProvDocument):
         if len(usesSoftware) > 0:
             attrs.append((EOS_USESSOFTWARE, tuple(usesSoftware)))
         if wasAssociatedWith is not None:
-            waw_id = "hysds:%s" % get_uuid("%s:%s" % (id, wasAssociatedWith))
+            waw_id = "hysds:%s" % get_uuid("{}:{}".format(id, wasAssociatedWith))
             waw_attrs = {}
             if wasAssociatedWithRole is not None:
                 waw_attrs[PROV_ROLE] = wasAssociatedWithRole
@@ -315,7 +306,7 @@ class ProvEsDocument(ProvDocument):
         for input in used:
             if start_time is not None:
                 used_id = "hysds:%s" % get_uuid(
-                    "%s:%s:%s" % (ps, input, start_time))
+                    "{}:{}:{}".format(ps, input, start_time))
                 if bundle:
                     bundle.used(ps, input, start_time, used_id, input_attrs)
                 else:
@@ -324,7 +315,7 @@ class ProvEsDocument(ProvDocument):
         for output in generated:
             if end_time is not None:
                 gen_id = "hysds:%s" % get_uuid(
-                    "%s:%s:%s" % (output, ps, end_time))
+                    "{}:{}:{}".format(output, ps, end_time))
                 if bundle:
                     bundle.wasGeneratedBy(
                         output, ps, end_time, gen_id, output_attrs)
