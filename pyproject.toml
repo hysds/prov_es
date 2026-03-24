@@ -1,0 +1,52 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "hysds-prov-es"
+dynamic = ["version"]
+description = "PROV-ES python library"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.12"
+authors = [
+    {name = "HySDS", email = "hysds-help@jpl.nasa.gov"}
+]
+keywords = ["hysds", "prov", "provenance", "prov-es"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: Unix",
+    "Operating System :: MacOS :: MacOS X",
+]
+
+dependencies = [
+    # Core dependencies - matching original setup.py order and pins exactly
+    "prov==1.3.1",
+    # Note: 'future>=0.17.1' removed - not needed on Python 3.12+
+]
+
+[project.urls]
+Homepage = "https://github.com/hysds/prov_es"
+Repository = "https://github.com/hysds/prov_es"
+Issues = "https://github.com/hysds/prov_es/issues"
+
+[tool.hatch.version]
+source = "vcs"
+raw-options = {version_scheme = "no-guess-dev"}
+
+[tool.hatch.build.targets.wheel]
+packages = ["prov_es"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/prov_es",
+    "README.md",
+    "LICENSE",
+]

@@ -1,23 +1,12 @@
-from setuptools import setup, find_packages
+# Minimal setup.py shim for backward compatibility
+# This delegates to pyproject.toml for all configuration
+# This file will be removed in a future release (v7.1.0+)
+#
+# Modern installation (recommended):
+#   pip install .
+#   pip install -e .
+#
+# This shim ensures existing scripts that expect setup.py continue to work
+from setuptools import setup
 
-setup(
-    name='prov_es',
-    version='0.3.0',
-    long_description='PROV-ES python library',
-    packages=find_packages(),
-    include_package_data=True,
-    zip_safe=False,
-    install_requires=['prov==1.3.1', 'future>=0.17.1'],
-    python_requires='>=3.12',
-    classifiers=[
-        "Development Status :: 5 - Production/Stable",
-        "Intended Audience :: Developers",
-        "Intended Audience :: Science/Research",
-        "License :: OSI Approved :: Apache Software License",
-        "Programming Language :: Python :: 3 :: Only",
-        "Programming Language :: Python :: 3.12",
-        "Operating System :: POSIX :: Linux",
-        "Operating System :: Unix",
-        "Operating System :: MacOS :: MacOS X",
-    ],
-)
+setup()
